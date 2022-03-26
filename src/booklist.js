@@ -18,15 +18,24 @@ class BookLibrary {
     } return "book does not exist"
   }
 
-  changeCategory(book, changeGenreTo) {
+  changeCategory(changeGenreTo, id) {
     for (let i = 0; i < this.bookList.length; i += 1) {
-        if (this.bookList[i].bookName === book.bookName) {
-            this.bookList[i].genre = changeGenreTo
-            // console.log(this.bookList[i].genre)
-            // return this.bookList[i].genre
-            return changeGenreTo && this.bookList[i]
+    // #1
+    //     if (this.bookList[i].bookName === book.bookName) {
+    //         this.bookList[i].genre = changeGenreTo
+    //         // console.log(this.bookList[i].genre)
+    //         // return this.bookList[i].genre
+    //         return changeGenreTo && this.bookList[i]
+    //    }
 
-       }
+    // #2
+        const targetBook = this.bookList[i]
+        if (id === targetBook.id) {
+            targetBook.genre = changeGenreTo
+            return targetBook
+        }
+    
+        return "This book cannot be found in the Library"
     }
   }
 }
