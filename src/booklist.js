@@ -30,8 +30,10 @@ class BookLibrary {
 
     // #2
         const targetBook = this.bookList[i]
+        console.log(targetBook)
         if (id === targetBook.id) {
             targetBook.genre = changeGenreTo
+            console.log(targetBook)
             return targetBook
         }
     
