@@ -1,3 +1,5 @@
+const { ConsoleReporter } = require("jasmine")
+
 class BookLibrary {
   constructor() {
     this.bookList = []
@@ -36,8 +38,9 @@ class BookLibrary {
             console.log(targetBook)
             return targetBook
         }
-    
-        return "This book cannot be found in the Library"
+        const errorMessage ="This book cannot be found in the Library"
+        console.log(errorMessage)
+        return errorMessage
     }
   }
 }
